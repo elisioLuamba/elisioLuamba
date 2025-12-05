@@ -1,6 +1,3 @@
-[![GitHub stats](https://github-readme-stats.vercel.app/api?username=eliMassaqui&show_icons=true&hide=&count_private=true&title_color=6f42c1&text_color=6f42c1&icon_color=6f42c1&bg_color=ffff00&hide_border=true&show_icons=true)](https://github.com/eliMassaqui)
-
-
 ### Tools & Technologies
 
 <img src="https://github.com/elisioMassaqui/elisioMassaqui/raw/main/vtzpl5c9yd181.png" alt="Unity" width="100" height="100"> <img src="https://github.com/elisioMassaqui/elisioMassaqui/raw/main/Antu_arduino-icon-small.svg.png" alt="Arduino" width="90" height="90">
@@ -16,11 +13,6 @@
  <img src="https://github.com/elisioMassaqui/elisioMassaqui/blob/main/unity-creative-core.png" alt="Android Studio User" width="80" height="80">
   <img src="https://github.com/elisioMassaqui/elisioMassaqui/blob/main/all-in-open-source-contributor%20(1).png" alt="Android Studio User" width="90" height="90">
 </div>
-
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=eliMassaqui&layout=compact&langs_count=10&exclude_repo=repo1,repo2)](https://github.com/eliMassaqui/github-readme-stats)
-
-
 
 
 
