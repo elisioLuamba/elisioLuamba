@@ -22,9 +22,9 @@ Atuo na interseção entre **computação gráfica**, **web moderna** e **simula
 ### 🧰 Tools & Technologies
 
 <p align="center">
+  <img src="https://github.com/elisioMassaqui/elisioMassaqui/raw/main/vtzpl5c9yd181.png" alt="Unity" width="100" height="100">
   <img src="https://github.com/elisioMassaqui/elisioMassaqui/blob/main/Three.js_Icon.svg.png" alt="Three.js" width="90" height="90">
   <img src="https://github.com/eliMassaqui/eliMassaqui/blob/main/vite.png" alt="Three.js" width="90" height="90">
-  <img src="https://github.com/elisioMassaqui/elisioMassaqui/raw/main/vtzpl5c9yd181.png" alt="Unity" width="100" height="100">
   <img src="https://github.com/elisioMassaqui/elisioMassaqui/raw/main/Antu_arduino-icon-small.svg.png" alt="Arduino" width="90" height="90">
   <img src="https://github.com/elisioMassaqui/elisioMassaqui/blob/main/py.png" alt="Python" width="100" height="100">
 </p>
