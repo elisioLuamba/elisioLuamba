@@ -15,7 +15,7 @@ Atuo na interseção entre **computação gráfica**, **web moderna** e **simula
 ⚙️ Sou movido por desafios que unem **criatividade e performance**, e acredito que cada linha de código pode ser uma obra de arte quando escrita com propósito.
 
 📍 **Luanda, Angola**  
-📫 [LinkedIn](https://www.linkedin.com/in/el%C3%ADsiomassaqui380/) • [GitHub](https://github.com/elisioMassaqui)
+📫 [LinkedIn](https://www.linkedin.com/in/el%C3%ADsiomassaqui380/) • [GitHub Older](https://github.com/elisioMassaqui)
 
 ---
 
