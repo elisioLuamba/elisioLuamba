@@ -1,5 +1,5 @@
 <h1 align="center">👋 Hey, I'm Elísio Massaqui</h1>
-<h3 align="center">🚀 Real-Time 3D Web Developer | Three.js • WebGL • Unity • Vite | Computação Gráfica Interativa</h3>
+<h3 align="center">🚀 Real-Time 3D Web Developer | Three.js • WebGL • Robotic • Vite | Computação Gráfica Interativa</h3>
 
 ---
 
