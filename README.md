@@ -1,6 +1,16 @@
 <h1 align="center">👋 Hey, I'm Elísio Massaqui</h1>
 <h3 align="center">🚀 Real-Time 3D Web Developer | Three.js • WebGL • Robotic • Vite | Computação Gráfica Interativa</h3>
 
+### 📊 My Stats & Top Languages
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=elisioMassaqui&layout=compact&theme=vision-friendly-dark&hide_border=true" alt="Linguagens mais usadas" height="165" />
+  <img src="https://github-readme-stats.vercel.app/api?username=elisioMassaqui&show_icons=true&theme=vision-friendly-dark&hide_border=true" alt="Estatísticas do GitHub" height="165" />
+</p>
+
+---
+
+
 ---
 
 ### 🧠 About Me
