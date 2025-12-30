@@ -65,7 +65,7 @@ class ElisioMassaqui:
         self.vitoria_hackathon = "🏆 Vencedor: Equipe do Robotgames Hackathon, 2º lugar em 2023"
         self.aventuras_github = "🌍 All In Africa Student, desde novembro de 2023"
         self.magia_open_source = "💻 Membro da Comunidade de Código Aberto de Angola"
-        self.simulacao_3d = "🌐 Desenvolvedor de simulação 3D com Three.js e Unity"
+        self.simulacao_3d = "🌐 Desenvolvedor de simulação 3D com Three.js e Python"
         self.multilingue = "🗣 Português e Inglês"
         self.frontend = "🕸 Dominando o Desenvolvimento Front-End e Web Interativa"
         self.paixao_por_jogos = "🎮 Jogando Video Games"
