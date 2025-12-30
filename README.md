@@ -44,7 +44,7 @@ Atuo na interseção entre **computação gráfica**, **web moderna** e **simula
 
 ### ⚡ Featured Highlights
 
-- 🧩 **Real-Time 3D Web Developer** — criando experiências interativas com **Three.js, WebGL e Unity**  
+- 🧩 **Real-Time 3D Web Developer** — criando experiências interativas com **Three.js, WebGL e Python**  
 - 🔬 **Explorador de Computação Gráfica** — com domínio em **Shaders, Render Pipelines e Otimização de Cenas 3D**  
 - 💻 **Entusiasta de Open Source** — membro ativo da Comunidade de Código Aberto de Angola  
 - 🏆 **2º Lugar no Robotgames Hackathon 2023** — projeto em equipe com integração de hardware e simulação  
