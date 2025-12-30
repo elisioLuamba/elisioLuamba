@@ -9,8 +9,7 @@
 Atuo na interseção entre **computação gráfica**, **web moderna** e **simulação 3D**, criando experiências interativas e visuais únicas.  
 
 🎓 **Estudante de Engenharia Informática** na Universidade Metodista de Angola.  
-💡 Foco em **renderização em tempo real**, **desenvolvimento 3D para web** e **aplicações interativas em Unity e Three.js**.  
-🏗 Já desenvolvi projetos integrando **Unity + WebGL**, **Arduino + simulações**, e **visualizações em tempo real** usando **Vite**.  
+💡 Foco em **renderização em tempo real**, **desenvolvimento 3D para web** e **aplicações interativas Three.js e Python**.  
 
 ⚙️ Sou movido por desafios que unem **criatividade e performance**, e acredito que cada linha de código pode ser uma obra de arte quando escrita com propósito.
 
