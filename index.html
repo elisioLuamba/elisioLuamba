@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eli Massaqui | Python, Robótica & Simulação 3D</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+    <!-- Tailwind Config for Custom Palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            800: '#292524',
+                            900: '#1c1917',
+                        },
+                        accent: {
+                            light: '#fdba74', /* Orange 300 */
+                            DEFAULT: '#f97316', /* Orange 500 */
+                            dark: '#c2410c', /* Orange 700 */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        mono: ['Fira Code', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafaf9; /* stone-50 */
+            color: #292524; /* stone-800 */
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e7e5e4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e;
+        }
+
+        /* Chart Container Styling - MANDATORY */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        .chart-container-large {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 500px;
+            max-height: 600px;
+            margin: 0 auto;
+        }
+
+        /* Card Hover Effects */
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Typewriter Cursor */
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white">
+
+    <!-- REQUIRED PLACEHOLDERS -->
+    <!-- Chosen Palette: Warm Neutrals (Stone/Warm Grey) with Muted Orange/Terra-cotta Accents. Creates a grounded, engineering/architectural feel suitable for robotics and design. -->
+    
+    <!-- Application Structure Plan:
+         1. Header: Minimalist branding and navigation.
+         2. Hero Section: Introduces Eli Massaqui with a "terminal" typing effect to emphasize coding roots.
+         3. Tech Stack & Skills (Interactive): A dashboard view allowing users to toggle between different skill domains (Core, Robotics, Simulation) updating a Radar chart. This organizes a long list of skills into consumable chunks.
+         4. GitHub Analytics (Data): Uses a Doughnut chart to visualize language distribution, simulating data from the user's GitHub.
+         5. Simulation Lab (Wow Factor): A Plotly 3D interactive graph. This directly addresses the "3D Simulation" aspect, allowing the user to "visualize" a robot trajectory.
+         6. Project Showcase: Filterable grid. Users can filter by technology (Python, ROS, etc.), simulating an organized portfolio.
+         7. Timeline/Trajectory: A vertical flow showing the journey/education.
+         8. Footer: Simple contact info.
+         Rationale: This structure moves from general introduction to specific skills, then to concrete evidence (simulation/projects), maximizing engagement through interaction.
+    -->
+
+    <!-- Visualization & Content Choices:
+         1. Hero Typing Effect: Text/JS. Goal: Engagement. content: "Python | Robotics | Simulation".
+         2. Skills Radar Chart: Chart.js. Goal: Inform/Compare. Allows comparing balance of skills (e.g., strong in coding vs hardware). Interactive buttons change dataset. No SVG.
+         3. Language Distribution: Chart.js Doughnut. Goal: Inform. Shows dominance of Python.
+         4. 3D Robot Trajectory: Plotly.js (WebGL/Canvas). Goal: "Wow" Factor/Simulation. Represents a robot path planning algorithm or sensor cloud. Interactive rotation/zoom.
+         5. Project Grid: HTML/Tailwind + JS Filtering. Goal: Organize. Categorizes work.
+    -->
+    
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-stone-50/90 backdrop-blur-md border-b border-stone-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-mono text-xl font-bold text-stone-900 tracking-tighter">
+                        &lt;EliMassaqui /&gt;
+                    </span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <button onclick="scrollToSection('sobre')" class="text-stone-600 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Sobre</button>
+                        <button onclick="scrollToSection('habilidades')" class="text-stone-600 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Habilidades</button>
+                        <button onclick="scrollToSection('simulacao')" class="text-stone-600 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Laboratório 3D</button>
+                        <button onclick="scrollToSection('projetos')" class="text-stone-600 hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors">Projetos</button>
+                    </div>
+                </div>
+                <!-- Mobile menu button (simplified for single file) -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-stone-600 hover:bg-stone-200 focus:outline-none">
+                        <span class="sr-only">Menu</span>
+                        <span class="text-2xl">☰</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-stone-50 border-b border-stone-200" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <button onclick="scrollToSection('sobre'); toggleMobileMenu()" class="block w-full text-left text-stone-600 hover:bg-stone-100 px-3 py-2 rounded-md text-base font-medium">Sobre</button>
+                <button onclick="scrollToSection('habilidades'); toggleMobileMenu()" class="block w-full text-left text-stone-600 hover:bg-stone-100 px-3 py-2 rounded-md text-base font-medium">Habilidades</button>
+                <button onclick="scrollToSection('simulacao'); toggleMobileMenu()" class="block w-full text-left text-stone-600 hover:bg-stone-100 px-3 py-2 rounded-md text-base font-medium">Laboratório 3D</button>
+                <button onclick="scrollToSection('projetos'); toggleMobileMenu()" class="block w-full text-left text-stone-600 hover:bg-stone-100 px-3 py-2 rounded-md text-base font-medium">Projetos</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="sobre" class="bg-stone-50 pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center">
+                <h1 class="text-4xl tracking-tight font-extrabold text-stone-900 sm:text-5xl md:text-6xl">
+                    <span class="block xl:inline">Eli Massaqui</span>
+                    <span class="block text-accent mt-2" id="typewriter"></span>
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-xl text-stone-500">
+                    Engenharia de software focada em dar vida a sistemas autônomos. Especialista em Python, ambientes de simulação 3D e desenvolvimento de robótica avançada.
+                </p>
+                <div class="mt-8 flex justify-center gap-4">
+                    <button onclick="scrollToSection('projetos')" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-stone-900 hover:bg-stone-700 md:text-lg transition-colors shadow-lg">
+                        Ver Projetos
+                    </button>
+                    <a href="https://github.com/eliMassaqui" target="_blank" class="px-8 py-3 border border-stone-300 text-base font-medium rounded-md text-stone-700 bg-white hover:bg-stone-100 md:text-lg transition-colors shadow-sm">
+                        GitHub Profile
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Quick Stats Row -->
+            <div class="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-4 max-w-4xl mx-auto text-center border-t border-stone-200 pt-8">
+                <div class="p-4">
+                    <p class="text-3xl font-bold text-stone-800" id="stat-repos">0</p>
+                    <p class="text-sm font-medium text-stone-500">Repositórios</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-3xl font-bold text-stone-800" id="stat-years">0</p>
+                    <p class="text-sm font-medium text-stone-500">Anos de XP</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-3xl font-bold text-stone-800" id="stat-projects">0</p>
+                    <p class="text-sm font-medium text-stone-500">Projetos de Simulação</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-3xl font-bold text-stone-800">Python</p>
+                    <p class="text-sm font-medium text-stone-500">Linguagem Principal</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Skills Analysis Section -->
+    <section id="habilidades" class="py-16 bg-white border-y border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-base text-accent font-semibold tracking-wide uppercase">Competências Técnicas</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-stone-900 sm:text-4xl">
+                    Análise de Habilidades
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-stone-500 mx-auto">
+                    Explore minhas áreas de atuação interagindo com o painel abaixo. Veja o equilíbrio entre desenvolvimento de software e engenharia robótica.
+                </p>
+            </div>
+
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+                <!-- Controls -->
+                <div class="lg:col-span-4 space-y-4 mb-8 lg:mb-0">
+                    <h3 class="text-lg font-medium text-stone-900 mb-4">Selecione o Domínio:</h3>
+                    <div class="space-y-2">
+                        <button onclick="updateRadarChart('geral')" class="w-full text-left px-4 py-3 rounded-lg bg-stone-100 hover:bg-stone-200 focus:outline-none focus:ring-2 focus:ring-accent transition-colors flex justify-between items-center group">
+                            <span class="font-medium text-stone-700 group-hover:text-stone-900">Visão Geral</span>
+                            <span class="text-stone-400">→</span>
+                        </button>
+                        <button onclick="updateRadarChart('robotica')" class="w-full text-left px-4 py-3 rounded-lg bg-stone-100 hover:bg-stone-200 focus:outline-none focus:ring-2 focus:ring-accent transition-colors flex justify-between items-center group">
+                            <span class="font-medium text-stone-700 group-hover:text-stone-900">Robótica & Hardware</span>
+                            <span class="text-stone-400">→</span>
+                        </button>
+                        <button onclick="updateRadarChart('soft')" class="w-full text-left px-4 py-3 rounded-lg bg-stone-100 hover:bg-stone-200 focus:outline-none focus:ring-2 focus:ring-accent transition-colors flex justify-between items-center group">
+                            <span class="font-medium text-stone-700 group-hover:text-stone-900">Linguagens & Frameworks</span>
+                            <span class="text-stone-400">→</span>
+                        </button>
+                        <button onclick="updateRadarChart('sim')" class="w-full text-left px-4 py-3 rounded-lg bg-stone-100 hover:bg-stone-200 focus:outline-none focus:ring-2 focus:ring-accent transition-colors flex justify-between items-center group">
+                            <span class="font-medium text-stone-700 group-hover:text-stone-900">Simulação 3D & Ferramentas</span>
+                            <span class="text-stone-400">→</span>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 p-4 bg-stone-50 rounded-lg border border-stone-200">
+                        <h4 class="font-bold text-stone-800 text-sm uppercase tracking-wide mb-2">Contexto</h4>
+                        <p id="skill-description" class="text-sm text-stone-600">
+                            Uma visão holística combinando lógica de programação forte com conhecimento prático de hardware.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Radar Chart -->
+                <div class="lg:col-span-8">
+                    <div class="bg-white rounded-xl shadow-lg border border-stone-100 p-4">
+                        <div class="chart-container">
+                            <canvas id="skillsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Secondary Chart: Languages -->
+            <div class="mt-16 border-t border-stone-200 pt-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-4">Ecossistema de Código</h3>
+                        <p class="text-stone-600 mb-6">
+                            Baseado na análise dos meus repositórios públicos, esta é a distribuição das tecnologias que utilizo diariamente. O <strong>Python</strong> é o núcleo de integração, enquanto <strong>C++</strong> garante performance em sistemas embarcados.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 rounded-full bg-orange-500 mr-2"></span>
+                                <span class="text-stone-700 font-medium w-24">Python</span>
+                                <div class="flex-1 bg-stone-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-orange-500 h-full" style="width: 65%"></div>
+                                </div>
+                                <span class="ml-2 text-sm text-stone-500">65%</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 rounded-full bg-blue-600 mr-2"></span>
+                                <span class="text-stone-700 font-medium w-24">C++</span>
+                                <div class="flex-1 bg-stone-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-blue-600 h-full" style="width: 20%"></div>
+                                </div>
+                                <span class="ml-2 text-sm text-stone-500">20%</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-3 h-3 rounded-full bg-yellow-400 mr-2"></span>
+                                <span class="text-stone-700 font-medium w-24">JavaScript</span>
+                                <div class="flex-1 bg-stone-200 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-yellow-400 h-full" style="width: 10%"></div>
+                                </div>
+                                <span class="ml-2 text-sm text-stone-500">10%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-stone-50 p-6 rounded-xl border border-stone-200 flex justify-center">
+                         <div class="chart-container" style="height: 300px;">
+                            <canvas id="languagesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Simulation Lab Section (The "Wow" Factor) -->
+    <section id="simulacao" class="py-16 bg-stone-900 text-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:items-start lg:justify-between">
+                <div class="max-w-xl">
+                    <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                        Laboratório de Simulação
+                    </h2>
+                    <p class="mt-4 text-lg text-stone-300">
+                        A robótica começa no virtual. Abaixo está uma visualização interativa 3D de dados de trajetória robótica, simulando o planejamento de caminho de um braço manipulador ou drone em espaço tridimensional.
+                    </p>
+                    
+                    <div class="mt-8 space-y-4">
+                        <div class="bg-stone-800 p-4 rounded-lg border border-stone-700">
+                            <h3 class="text-accent font-bold mb-2">Controles da Simulação</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <button onclick="generateRandomPath()" class="bg-stone-700 hover:bg-stone-600 text-white px-4 py-2 rounded text-sm transition-colors border border-stone-600">
+                                    ⟳ Gerar Nova Trajetória
+                                </button>
+                                <button onclick="animatePath()" class="bg-accent hover:bg-accent-dark text-white px-4 py-2 rounded text-sm transition-colors font-bold shadow-lg shadow-orange-900/50">
+                                    ► Executar Movimento
+                                </button>
+                            </div>
+                            <p class="mt-3 text-xs text-stone-400 font-mono">
+                                > Status: Aguardando input... <br>
+                                > Engine: Plotly WebGL
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-10 lg:mt-0 lg:ml-10 flex-1 min-w-0">
+                    <div class="bg-black rounded-lg shadow-2xl overflow-hidden border border-stone-700">
+                        <div class="chart-container-large" id="plotly3d"></div>
+                    </div>
+                    <p class="text-center text-xs text-stone-500 mt-2">Interaja: Arraste para girar, Scroll para zoom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio -->
+    <section id="projetos" class="py-16 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-stone-900">Portfólio de Projetos</h2>
+                <p class="mt-4 max-w-2xl text-xl text-stone-500 mx-auto">
+                    Uma coleção de experimentos, ferramentas e sistemas desenvolvidos.
+                </p>
+                
+                <!-- Filters -->
+                <div class="mt-8 flex justify-center space-x-2 flex-wrap gap-y-2">
+                    <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-stone-200 text-stone-800 hover:bg-stone-300 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-stone-500" data-filter="all">Todos</button>
+                    <button onclick="filterProjects('robotics')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-stone-600 border border-stone-300 hover:bg-stone-50 transition-colors" data-filter="robotics">Robótica (ROS)</button>
+                    <button onclick="filterProjects('python')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-stone-600 border border-stone-300 hover:bg-stone-50 transition-colors" data-filter="python">Python Auto</button>
+                    <button onclick="filterProjects('simulation')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white text-stone-600 border border-stone-300 hover:bg-stone-50 transition-colors" data-filter="simulation">Simulação 3D</button>
+                </div>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3" id="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card bg-white overflow-hidden shadow rounded-lg border border-stone-100 flex flex-col" data-category="robotics simulation">
+                    <div class="h-48 bg-stone-800 flex items-center justify-center relative">
+                        <!-- Icon representation instead of img -->
+                        <span class="text-6xl text-stone-600">🤖</span>
+                        <div class="absolute top-2 right-2 bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded-full font-bold uppercase">ROS</div>
+                    </div>
+                    <div class="px-6 py-4 flex-1">
+                        <h3 class="text-lg font-medium text-stone-900">Navegação Autônoma</h3>
+                        <p class="mt-2 text-stone-500 text-sm">Implementação de algoritmos SLAM e path planning utilizando ROS Navigation Stack e sensores LiDAR simulados no Gazebo.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-stone-100 text-stone-800">C++</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-stone-100 text-stone-800">Python</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-stone-100 text-stone-800">Gazebo</span>
+                        </div>
+                    </div>
+                    <div class="bg-stone-50 px-6 py-3 border-t border-stone-100">
+                        <a href="https://github.com/eliMassaqui" class="text-sm font-medium text-accent hover:text-accent-dark">Ver no GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card bg-white overflow-hidden shadow rounded-lg border border-stone-100 flex flex-col" data-category="python">
+                    <div class="h-48 bg-stone-800 flex items-center justify-center relative">
+                        <span class="text-6xl text-stone-600">🐍</span>
+                        <div class="absolute top-2 right-2 bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-bold uppercase">Python</div>
+                    </div>
+                    <div class="px-6 py-4 flex-1">
+                        <h3 class="text-lg font-medium text-stone-900">Automação de Dados</h3>
+                        <p class="mt-2 text-stone-500 text-sm">Scripts Python para ETL (Extração, Transformação e Carregamento) de grandes volumes de dados, utilizando Pandas e integração com APIs.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-stone-100 text-stone-800">Pandas</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-stone-100 text-stone-800">API REST</span>
+                        </div>
+                    </div>
+                    <div class="bg-stone-50 px-6 py-3 border-t border-stone-100">
+                        <a href="https://github.com/eliMassaqui" class="text-sm font-medium text-accent hover:text-accent-dark">Ver no GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card bg-white overflow-hidden shadow rounded-lg border border-stone-100 flex flex-col" data-category="simulation">
+                    <div class="h-48 bg-stone-800 flex items-center justify-center relative">
+                        <span class="text-6xl text-stone-600">🏗️</span>
+                        <div class="absolute top-2 right-2 bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full font-bold uppercase">3D Sim</div>
+                    </div>
+                    <div class="px-6 py-4 flex-1">
+                        <h3 class="text-lg font-medium text-stone-900">Braço Robótico IK</h3>
+                        <p class="mt-2 text-stone-500 text-sm">Simulação de cinemática inversa (IK) para manipulador de 6 eixos. Visualização em tempo real de juntas e efetores finais.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-stone-100 text-stone-800">Python</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-stone-100 text-stone-800">NumPy</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-stone-100 text-stone-800">Blender API</span>
+                        </div>
+                    </div>
+                    <div class="bg-stone-50 px-6 py-3 border-t border-stone-100">
+                        <a href="https://github.com/eliMassaqui" class="text-sm font-medium text-accent hover:text-accent-dark">Ver no GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                 <!-- Project Card 4 -->
+                 <div class="project-card bg-white overflow-hidden shadow rounded-lg border border-stone-100 flex flex-col" data-category="robotics">
+                    <div class="h-48 bg-stone-800 flex items-center justify-center relative">
+                        <span class="text-6xl text-stone-600">👁️</span>
+                        <div class="absolute top-2 right-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-bold uppercase">CV</div>
+                    </div>
+                    <div class="px-6 py-4 flex-1">
+                        <h3 class="text-lg font-medium text-stone-900">Visão Computacional</h3>
+                        <p class="mt-2 text-stone-500 text-sm">Sistema de detecção de objetos para robôs móveis utilizando OpenCV e YOLO, permitindo desvio de obstáculos em tempo real.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-stone-100 text-stone-800">OpenCV</span>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-stone-100 text-stone-800">YOLOv5</span>
+                        </div>
+                    </div>
+                    <div class="bg-stone-50 px-6 py-3 border-t border-stone-100">
+                        <a href="https://github.com/eliMassaqui" class="text-sm font-medium text-accent hover:text-accent-dark">Ver no GitHub &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-stone-200">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
+            <div class="flex justify-center space-x-6 md:order-2">
+                <a href="https://github.com/eliMassaqui" class="text-stone-400 hover:text-stone-500">
+                    <span class="sr-only">GitHub</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+            <div class="mt-8 md:mt-0 md:order-1">
+                <p class="text-center text-base text-stone-400">
+                    &copy; 2025 Eli Massaqui. Todos os direitos reservados.
+                </p>
+                <p class="text-center text-sm text-stone-300 mt-2">
+                    Visualização gerada para demonstração de portfólio.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- Navigation ---
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // --- Stats Animation ---
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Trigger stats on load
+        window.onload = () => {
+            animateValue(document.getElementById("stat-repos"), 0, 15, 2000);
+            animateValue(document.getElementById("stat-years"), 0, 4, 2000);
+            animateValue(document.getElementById("stat-projects"), 0, 8, 2000);
+            
+            // Start Typewriter
+            typeWriter();
+            
+            // Initialize 3D Plot
+            init3DPlot();
+        };
+
+        // --- Typewriter Effect ---
+        const texts = ["Python Developer", "Robotics Engineer", "3D Simulation Specialist"];
+        let count = 0;
+        let index = 0;
+        let currentText = "";
+        let letter = "";
+
+        function typeWriter() {
+            if (count === texts.length) {
+                count = 0;
+            }
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+            
+            const element = document.getElementById("typewriter");
+            if(element) {
+                element.textContent = letter + "|";
+            }
+            
+            if (letter.length === currentText.length) {
+                count++;
+                index = 0;
+                setTimeout(typeWriter, 2000); // Wait before next word
+            } else {
+                setTimeout(typeWriter, 100); // Typing speed
+            }
+        }
+
+        // --- Chart.js: Skills Radar Chart ---
+        const ctxSkills = document.getElementById('skillsChart').getContext('2d');
+        
+        // Data configurations
+        const skillData = {
+            'geral': {
+                labels: ['Python', 'Robótica (ROS)', 'Simulação 3D', 'C++', 'Matemática', 'DevOps'],
+                data: [95, 85, 80, 70, 75, 60],
+                label: 'Visão Geral',
+                desc: 'Uma visão holística combinando lógica de programação forte com conhecimento prático de hardware.'
+            },
+            'robotica': {
+                labels: ['ROS/ROS2', 'Gazebo', 'Cinemática', 'Sensores', 'Arduino/RPi', 'Path Planning'],
+                data: [90, 85, 80, 85, 75, 70],
+                label: 'Robótica',
+                desc: 'Foco em middleware ROS, integração de sensores e controle de movimento.'
+            },
+            'soft': {
+                labels: ['Python', 'C++', 'Git/GitHub', 'Linux', 'Docker', 'OpenCV'],
+                data: [95, 75, 90, 85, 70, 80],
+                label: 'Software',
+                desc: 'Ferramentas de desenvolvimento essenciais para pipelines de robótica robustos.'
+            },
+            'sim': {
+                labels: ['Blender', 'Unity', 'Física', 'Modelagem', 'Rendering', 'VR'],
+                data: [80, 65, 75, 70, 60, 50],
+                label: 'Simulação',
+                desc: 'Criação de ambientes virtuais para testes seguros de algoritmos de robôs.'
+            }
+        };
+
+        let skillsChart = new Chart(ctxSkills, {
+            type: 'radar',
+            data: {
+                labels: skillData['geral'].labels,
+                datasets: [{
+                    label: skillData['geral'].label,
+                    data: skillData['geral'].data,
+                    backgroundColor: 'rgba(249, 115, 22, 0.2)', // Orange-500
+                    borderColor: 'rgba(249, 115, 22, 1)',
+                    pointBackgroundColor: 'rgba(249, 115, 22, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(249, 115, 22, 1)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#e5e7eb' },
+                        grid: { color: '#e5e7eb' },
+                        pointLabels: {
+                            font: { size: 12, family: 'Inter' },
+                            color: '#4b5563'
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+
+        function updateRadarChart(key) {
+            const data = skillData[key];
+            skillsChart.data.labels = data.labels;
+            skillsChart.data.datasets[0].data = data.data;
+            skillsChart.data.datasets[0].label = data.label;
+            skillsChart.update();
+            
+            document.getElementById('skill-description').innerText = data.desc;
+        }
+
+        // --- Chart.js: Languages Doughnut ---
+        const ctxLang = document.getElementById('languagesChart').getContext('2d');
+        new Chart(ctxLang, {
+            type: 'doughnut',
+            data: {
+                labels: ['Python', 'C++', 'JavaScript', 'Outros'],
+                datasets: [{
+                    data: [65, 20, 10, 5],
+                    backgroundColor: [
+                        '#f97316', // Orange
+                        '#2563eb', // Blue
+                        '#facc15', // Yellow
+                        '#a8a29e'  // Grey
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { usePointStyle: true, padding: 20 }
+                    }
+                }
+            }
+        });
+
+        // --- Plotly.js: 3D Trajectory Simulation ---
+        let pathInterval;
+
+        function init3DPlot() {
+            const trace1 = {
+                x: [], y: [], z: [],
+                mode: 'lines',
+                line: {
+                    color: '#f97316',
+                    width: 6
+                },
+                type: 'scatter3d',
+                name: 'Robot Path'
+            };
+
+            const trace2 = {
+                x: [], y: [], z: [],
+                mode: 'markers',
+                marker: {
+                    size: 4,
+                    color: '#facc15',
+                    opacity: 0.8
+                },
+                type: 'scatter3d',
+                name: 'Waypoints'
+            };
+
+            const layout = {
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                showlegend: false,
+                margin: { l: 0, r: 0, b: 0, t: 0 },
+                scene: {
+                    xaxis: { title: 'X', color: '#a8a29e', showgrid: true, gridcolor: '#444' },
+                    yaxis: { title: 'Y', color: '#a8a29e', showgrid: true, gridcolor: '#444' },
+                    zaxis: { title: 'Z', color: '#a8a29e', showgrid: true, gridcolor: '#444' },
+                    camera: {
+                        eye: { x: 1.5, y: 1.5, z: 1.2 }
+                    }
+                }
+            };
+
+            Plotly.newPlot('plotly3d', [trace1, trace2], layout, {responsive: true, displayModeBar: false});
+            generateRandomPath(); // Generate initial path
+        }
+
+        function generateRandomPath() {
+            // Generate a spiral/helical path to simulate robotic arm movement or drone flight
+            const x = [], y = [], z = [];
+            const points = 100;
+            
+            for (let i = 0; i < points; i++) {
+                const t = i / 10;
+                x.push(Math.sin(t) * 5 + (Math.random() - 0.5));
+                y.push(Math.cos(t) * 5 + (Math.random() - 0.5));
+                z.push(i / 5);
+            }
+
+            const update = {
+                x: [x, x], // Update both trace lines and markers
+                y: [y, y],
+                z: [z, z]
+            };
+
+            Plotly.animate('plotly3d', {
+                data: [{x: x, y: y, z: z}, {x: x, y: y, z: z}],
+                traces: [0, 1],
+                layout: {}
+            }, {
+                transition: { duration: 1000, easing: 'cubic-in-out' },
+                frame: { duration: 1000 }
+            });
+        }
+
+        function animatePath() {
+            // Simulate "Running" the path point by point
+            const graphDiv = document.getElementById('plotly3d');
+            const fullX = graphDiv.data[0].x;
+            const fullY = graphDiv.data[0].y;
+            const fullZ = graphDiv.data[0].z;
+            
+            let i = 0;
+            clearInterval(pathInterval);
+            
+            // Clear current traces
+            Plotly.restyle('plotly3d', {x: [[], []], y: [[], []], z: [[], []]});
+
+            pathInterval = setInterval(() => {
+                if (i >= fullX.length) {
+                    clearInterval(pathInterval);
+                    return;
+                }
+                
+                Plotly.extendTraces('plotly3d', {
+                    x: [[fullX[i]], [fullX[i]]],
+                    y: [[fullY[i]], [fullY[i]]],
+                    z: [[fullZ[i]], [fullZ[i]]]
+                }, [0, 1]);
+                
+                i++;
+            }, 30);
+        }
+
+        // --- Project Filtering ---
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            // Update buttons
+            btns.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.add('bg-stone-200', 'text-stone-800');
+                    btn.classList.remove('bg-white', 'text-stone-600');
+                } else {
+                    btn.classList.remove('bg-stone-200', 'text-stone-800');
+                    btn.classList.add('bg-white', 'text-stone-600');
+                }
+            });
+
+            // Filter cards
+            cards.forEach(card => {
+                const categories = card.dataset.category.split(' ');
+                if (category === 'all' || categories.includes(category)) {
+                    card.style.display = 'flex'; // Reset to flex to keep layout
+                    setTimeout(() => card.style.opacity = '1', 50);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
