@@ -169,26 +169,35 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="sobre" class="bg-stone-50 pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="text-center">
-                <h1 class="text-4xl tracking-tight font-extrabold text-stone-900 sm:text-5xl md:text-6xl">
-                    <span class="block xl:inline">Eli Massaqui</span>
-                    <span class="block text-accent mt-2" id="typewriter"></span>
-                </h1>
-                <p class="mt-4 max-w-2xl mx-auto text-xl text-stone-500">
-                    Engenharia de software focada em dar vida a sistemas autônomos. Especialista em Python, ambientes de simulação 3D e desenvolvimento de robótica avançada.
-                </p>
-                <div class="mt-8 flex justify-center gap-4">
-                    <button onclick="scrollToSection('projetos')" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-stone-900 hover:bg-stone-700 md:text-lg transition-colors shadow-lg">
-                        Ver Projetos
-                    </button>
-                    <a href="https://github.com/eliMassaqui" target="_blank" class="px-8 py-3 border border-stone-300 text-base font-medium rounded-md text-stone-700 bg-white hover:bg-stone-100 md:text-lg transition-colors shadow-sm">
-                        GitHub Profile
-                    </a>
-                </div>
+        <!-- Hero Section -->
+    <header id="sobre" class="relative overflow-hidden">
+        <!-- Imagem de fundo -->
+        <div 
+            class="absolute inset-0 bg-cover bg-center" 
+            style="background-image: url('https://raw.githubusercontent.com/eliMassaqui/eliMassaqui/6f46202d30c2b7f0c0d6716a97221758a392eedf/459114754_480646824938140_1407034516389919287_n%20(1).jpg'); padding-top: 56.25%;">
+            <div class="absolute inset-0 bg-black/40"></div> <!-- Sobreposição para melhor contraste do texto -->
+        </div>
+    
+        <!-- Conteúdo do Hero -->
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 lg:pt-24 lg:pb-28 text-center">
+            <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                <span class="block xl:inline">Eli Massaqui</span>
+                <span class="block text-accent mt-2" id="typewriter"></span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-white/80">
+                Engenharia de software focada em dar vida a sistemas autônomos. Especialista em Python, ambientes de simulação 3D e desenvolvimento de robótica avançada.
+            </p>
+            <div class="mt-8 flex justify-center gap-4">
+                <button onclick="scrollToSection('projetos')" class="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-stone-900 hover:bg-stone-700 md:text-lg transition-colors shadow-lg">
+                    Ver Projetos
+                </button>
+                <a href="https://github.com/eliMassaqui" target="_blank" class="px-8 py-3 border border-stone-300 text-base font-medium rounded-md text-stone-700 bg-white hover:bg-stone-100 md:text-lg transition-colors shadow-sm">
+                    GitHub Profile
+                </a>
             </div>
+        </div>
+    </header>
+
             
             <!-- Quick Stats Row -->
             <div class="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-4 max-w-4xl mx-auto text-center border-t border-stone-200 pt-8">
@@ -808,4 +817,5 @@
 </body>
 
 </html>
+
 
