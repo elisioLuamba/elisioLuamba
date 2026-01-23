@@ -77,3 +77,25 @@ if __name__ == "__main__":
     for atributo, valor in elisio.__dict__.items():
         print(valor)
     pygame.quit()
+
+
+```
+
+---
+
+### ⚙️ Python Engineering Arsenal
+
+🔌 **Hardware & Comunicação**
+- `pyfirmata2` • `pyserial` • `socket` • `websockets` • `socketio` • `python-socketio`
+
+📊 **Cálculo & Visualização**
+- `numpy` • `matplotlib` • `pillow`
+
+🖥 **Desktop & UI**
+- `PyQt6` • `PySide6`
+
+🌐 **Backend & APIs**
+- `Flask` • `FastAPI`
+
+> 🔥 Stack usada em **robótica**, **simulação**, **IDEs**, **dashboards** e **sistemas em tempo real**, integrando hardware, software e visualização.
+
