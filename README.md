@@ -81,21 +81,49 @@ if __name__ == "__main__":
 
 ```
 
+
 ---
 
-### ⚙️ Python Engineering Arsenal
+### ⚙️ Python Engineering Stack
 
-🔌 **Hardware & Comunicação**
-- `pyfirmata2` • `pyserial` • `socket` • `websockets` • `socketio` • `python-socketio`
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Real--Time-Systems-critical" />
+  <img src="https://img.shields.io/badge/Hardware-Integration-orange" />
+  <img src="https://img.shields.io/badge/Web-APIs-success" />
+</p>
 
-📊 **Cálculo & Visualização**
-- `numpy` • `matplotlib` • `pillow`
+#### 🔌 Hardware & Comunicação
+<p>
+  <img src="https://img.shields.io/badge/pyFirmata2-Arduino-green" />
+  <img src="https://img.shields.io/badge/pySerial-USB--Serial-blue" />
+  <img src="https://img.shields.io/badge/socket-native-lightgrey" />
+  <img src="https://img.shields.io/badge/WebSockets-realtime-purple" />
+  <img src="https://img.shields.io/badge/Socket.IO-python--socketio-black" />
+</p>
 
-🖥 **Desktop & UI**
-- `PyQt6` • `PySide6`
+#### 📊 Cálculo & Visualização
+<p>
+  <img src="https://img.shields.io/badge/NumPy-linear--algebra-informational" />
+  <img src="https://img.shields.io/badge/Matplotlib-data--viz-yellow" />
+  <img src="https://img.shields.io/badge/Pillow-image--processing-lightblue" />
+</p>
 
-🌐 **Backend & APIs**
-- `Flask` • `FastAPI`
+#### 🖥 Desktop & UI
+<p>
+  <img src="https://img.shields.io/badge/PySide6-Qt--Framework-41CD52" />
+  <img src="https://img.shields.io/badge/PyQt6-Qt--Framework-2C2255" />
+</p>
 
-> 🔥 Stack usada em **robótica**, **simulação**, **IDEs**, **dashboards** e **sistemas em tempo real**, integrando hardware, software e visualização.
+#### 🌐 Backend & APIs
+<p>
+  <img src="https://img.shields.io/badge/FastAPI-async--api-teal?logo=fastapi" />
+  <img src="https://img.shields.io/badge/Flask-micro--framework-black?logo=flask" />
+</p>
 
+---
+
+### 📦 Quick Install
+
+```bash
+pip install pyfirmata2 pyqt6 pyside6 matplotlib pyserial flask fastapi numpy pillow websockets python-socketio
