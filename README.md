@@ -184,11 +184,10 @@ if __name__ == "__main__":
 
 #### ⚡ Web Tools
 <p>
-  <img src="https://img.shields.io/badge/React-UI-cyan" />
   <img src="https://img.shields.io/badge/Vite-build-lightgrey" />
 </p>
 
-- `react` • `react-dom` • `vite`
+-  `vite`
 
 ---
 
@@ -196,18 +195,11 @@ if __name__ == "__main__":
 
 ### Python
 ```bash
-pip install \
-  pyfirmata2 pyserial websockets python-socketio \
-  pyqt6 pyside6 pyqt6-webengine pyinstaller pyqtgraph \
-  flask fastapi \
-  numpy matplotlib pillow opencv-python mediapipe openai
+pip install pyfirmata2 pyserial websockets python-socketio pyqt6 pyside6 pyqt6-webengine pyqtgraph pyinstaller flask fastapi numpy matplotlib pillow opencv-python mediapipe openai
 ```
 
 ### Node
 ```bash
-npm install \
-  three @react-three/fiber @react-three/drei gsap \
-  cannon-es ammo.js orbit-controls \
-  johnny-five socket.io-client react react-dom vite
+npm install three @react-three/fiber @react-three/drei gsap cannon-es ammo.js orbit-controls johnny-five socket.io-client vite
 ```
 
