@@ -81,49 +81,136 @@ if __name__ == "__main__":
 
 ```
 
-
----
-
-### ⚙️ Python Engineering Stack
+# 🧠 Engineering Tech Stack
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Real--Time-Systems-critical" />
-  <img src="https://img.shields.io/badge/Hardware-Integration-orange" />
-  <img src="https://img.shields.io/badge/Web-APIs-success" />
-</p>
-
-#### 🔌 Hardware & Comunicação
-<p>
-  <img src="https://img.shields.io/badge/pyFirmata2-Arduino-green" />
-  <img src="https://img.shields.io/badge/pySerial-USB--Serial-blue" />
-  <img src="https://img.shields.io/badge/socket-native-lightgrey" />
-  <img src="https://img.shields.io/badge/WebSockets-realtime-purple" />
-  <img src="https://img.shields.io/badge/Socket.IO-python--socketio-black" />
-</p>
-
-#### 📊 Cálculo & Visualização
-<p>
-  <img src="https://img.shields.io/badge/NumPy-linear--algebra-informational" />
-  <img src="https://img.shields.io/badge/Matplotlib-data--viz-yellow" />
-  <img src="https://img.shields.io/badge/Pillow-image--processing-lightblue" />
-</p>
-
-#### 🖥 Desktop & UI
-<p>
-  <img src="https://img.shields.io/badge/PySide6-Qt--Framework-41CD52" />
-  <img src="https://img.shields.io/badge/PyQt6-Qt--Framework-2C2255" />
-</p>
-
-#### 🌐 Backend & APIs
-<p>
-  <img src="https://img.shields.io/badge/FastAPI-async--api-teal?logo=fastapi" />
-  <img src="https://img.shields.io/badge/Flask-micro--framework-black?logo=flask" />
+  <i>Simulation • Robotics • Real-Time Control • 3D Visualization</i>
 </p>
 
 ---
 
-### 📦 Quick Install
+## 🧭 Overview
 
-```bash
-pip install pyfirmata2 pyqt6 pyside6 matplotlib pyserial flask fastapi numpy pillow websockets python-socketio
+A multidisciplinary engineering stack designed to build **observable**,  
+**controllable** and **interactive systems** — connecting **code, space and hardware**.
+
+---
+
+## 🧩 Core Stack
+
+| Domain | Technologies |
+|------|-------------|
+| 🐍 **Backend & Logic** | Python |
+| 🌐 **Web & Interaction** | JavaScript / TypeScript |
+| ⚙️ **Runtime** | Node.js |
+
+---
+
+## 🖥️ Desktop & Developer Tools
+
+**Custom engineering tools and IDE-like environments**
+
+- 🧱 **PyQt6 / PySide6** — modular desktop interfaces  
+- 🌍 **PyQt6-WebEngine** — embedded web inside desktop apps  
+- 📈 **pyqtgraph** — real-time plots & monitoring  
+- 📦 **PyInstaller** — packaging & distribution  
+
+---
+
+## 🌐 3D Visualization & Web Interfaces
+
+**Interactive, spatial and technical visualization**
+
+- 🧊 **Three.js**  
+- 📐 **GLTF / OBJ / STL Loaders**  
+- 🛰️ **OrbitControls**  
+- 🎛️ **dat.gui / lil-gui**  
+- 🎞️ **GSAP**  
+- ⚛️ **React**  
+- ⚡ **Vite**
+
+---
+
+## ⚙️ Physics, Simulation & Digital Twins
+
+**From math to behavior**
+
+- 🧮 **NumPy / SciPy**  
+- 🤖 **PyBullet**  
+- 🌐 **Ammo.js / Cannon.js**
+
+---
+
+## 🔌 Hardware, Robotics & Real-Time Control
+
+**Software talking to the physical world**
+
+- 🔗 **pyFirmata2**  
+- 🤖 **Johnny-Five**  
+- 🔌 **pySerial**  
+- 🔄 **WebSockets / Socket.IO**  
+- ⏱️ **asyncio / time**
+
+---
+
+## 📡 Backend APIs & Communication
+
+**Lightweight, scalable services**
+
+- 🚀 **FastAPI**  
+- 🧪 **Flask**  
+- 📣 **python-socketio**  
+- 🔁 **websockets**
+
+---
+
+## 👁️ Computer Vision & Applied AI
+
+**Perception and intelligence**
+
+- 👀 **OpenCV**  
+- 🖐️ **MediaPipe**  
+- 🧠 **OpenAI API**  
+- 🧬 **AST (code analysis)**
+
+---
+
+## 📊 Data, Visualization & Utilities
+
+**Observability & developer experience**
+
+- 📊 **Pandas**  
+- 📉 **Matplotlib**  
+- 🎨 **Colorama**  
+- 🖼️ **Pillow**  
+- ⚙️ **Wheel**
+
+---
+
+## 🌱 Environment Management
+
+- 🐍 **Anaconda**
+
+---
+
+## 🧭 Engineering Philosophy
+
+> Systems should be **transparent**, **testable** and **controllable** —  
+> simulation, visualization and execution must speak the same language.
+
+---
+
+## 📌 Typical Applications
+
+- 🤖 Robotics simulation & control  
+- 🧠 Digital twins  
+- 🖥️ Custom IDEs & engineering tools  
+- 📡 Real-time dashboards  
+- 🔗 Hardware–software integrated systems  
+
+---
+
+<p align="center">
+  <sub>Engineering-first • Structure over aesthetics • Control over abstraction</sub>
+</p>
+
