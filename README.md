@@ -28,7 +28,7 @@ Atuo na interseção entre **computação gráfica**, **web moderna** e **simula
   <img src="https://github.com/elisioMassaqui/elisioMassaqui/raw/main/vtzpl5c9yd181.png" alt="Unity" width="100" height="100">
   <img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" alt="Unity" width="100" height="100">
   <img src="https://github.com/arduino/arduino-cli/blob/master/docs/img/CLI_Logo_small.png" alt="Arduino-CLI" width="100" height="100">
-  <img src="https://github.com/eliMassaqui/eliMassaqui/blob/main/icons8-anaconda-48.png" alt="Anaconda" width="100" height="100">
+  <img src="https://www.clipartmax.com/png/middle/234-2342908_anaconda-anaconda-python-logo.png" alt="Anaconda" width="100" height="100">
 </p>
 
 ---
