@@ -203,3 +203,44 @@ pip install pyfirmata2 pyserial websockets python-socketio pyqt6 pyside6 pyqt6-w
 npm install three @react-three/fiber @react-three/drei gsap cannon-es ammo.js orbit-controls johnny-five socket.io-client vite
 ```
 
+## 📦 Full Setup · Python + Anaconda + Arduino CLI
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Anaconda-Python-blue?logo=anaconda&logoColor=white" />
+  <img src="https://img.shields.io/badge/Arduino-CLI-red?logo=arduino&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white" />
+</p>
+
+```bash
+# ---------------------------
+# 1️⃣ Anaconda Environment
+# ---------------------------
+# Siga o link oficial se Anaconda não estiver instalada:
+# https://www.anaconda.com/products/distribution
+
+# Criação de ambiente isolado
+conda create -n engineering-lab python=3.11 -y
+conda activate engineering-lab
+
+# Instalar pacotes científicos
+conda install numpy scipy pandas matplotlib -y
+
+# ---------------------------
+# 2️⃣ Python Stack
+# ---------------------------
+pip install pyfirmata2 pyserial websockets python-socketio \
+            pyqt6 pyside6 pyqt6-webengine pyqtgraph pyinstaller \
+            flask fastapi numpy matplotlib pillow opencv-python mediapipe openai
+
+# ---------------------------
+# 3️⃣ Arduino CLI
+# ---------------------------
+# Windows: baixar MSI oficial
+# macOS/Linux: via Homebrew ou apt
+
+arduino-cli core update-index
+arduino-cli core install arduino:avr
+
+# Teste de instalação
+arduino-cli board list
+
