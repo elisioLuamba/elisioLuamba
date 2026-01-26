@@ -67,20 +67,34 @@ if __name__ == "__main__":
 ```
 # ⚙️ Full Engineering Stack
 
-*Simulation • Robotics • Real-Time Control • 3D Visualization • Web Integration*
+<p align="center">
+  <img src="https://img.shields.io/badge/Simulation-00B3A4?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Robotics-2ECC71?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Real--Time-E74C3C?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/3D-Visualization-3498DB?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Web-Integration-9B59B6?style=for-the-badge" />
+</p>
 
 ## 🐍 Python
-- **Hardware & Realtime:** pyFirmata2, pySerial, WebSockets, Socket.IO  
-- **Cálculo & Visualização:** NumPy, Matplotlib, pyqtgraph, Pillow  
-- **Desktop & UI:** PyQt6, PySide6, Qt WebEngine, PyInstaller  
-- **Backend & APIs:** Flask, FastAPI  
-- **Visão & IA:** OpenCV, MediaPipe, OpenAI API
+<p>
+  <img src="https://img.shields.io/badge/Hardware-Integration-E67E22" />
+  <img src="https://img.shields.io/badge/Realtime-Sockets-9B59B6" />
+  <img src="https://img.shields.io/badge/Desktop-Qt-2C2255" />
+  <img src="https://img.shields.io/badge/Backend-APIs-009688" />
+  <img src="https://img.shields.io/badge/Vision-AI-F1C40F" />
+</p>
 
-## 🌐 Node.js / Web
-- **3D & UI:** Three.js, @react-three/fiber, @react-three/drei  
-- **Animação & Física:** GSAP, cannon-es, ammo.js  
-- **Realtime & Hardware:** socket.io-client, Johnny-Five  
-- **Tooling:** Vite
+## 🌐 Web / Node.js
+<p>
+  <img src="https://img.shields.io/badge/3D-Three.js-FF8C00" />
+  <img src="https://img.shields.io/badge/Physics-Simulation-E67E22" />
+  <img src="https://img.shields.io/badge/Realtime-Socket.IO-9B59B6" />
+  <img src="https://img.shields.io/badge/Robotics-Johnny--Five-2ECC71" />
+  <img src="https://img.shields.io/badge/Tooling-Vite-95A5A6" />
+</p>
+
+> Stack enxuto e profissional para **engenharia, robótica e simulação 3D em tempo real**, unindo **hardware, desktop e web**.
+
 
 ## 📦 Quick Install
 
