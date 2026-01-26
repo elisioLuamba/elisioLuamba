@@ -93,9 +93,6 @@ if __name__ == "__main__":
   <img src="https://img.shields.io/badge/Tooling-Vite-95A5A6" />
 </p>
 
-> Stack enxuto e profissional para **engenharia, robótica e simulação 3D em tempo real**, unindo **hardware, desktop e web**.
-
-
 ## 📦 Quick Install
 
 ### Python
@@ -106,7 +103,6 @@ pip install pyfirmata2 pyserial websockets python-socketio pyqt6 pyside6 pyqt6-w
 ```bash
 npm install three @react-three/fiber @react-three/drei gsap cannon-es ammo.js orbit-controls johnny-five socket.io-client vite
 ```
-
 
 ## 📦 Full Setup · Python + Anaconda + Arduino CLI
 
@@ -148,4 +144,3 @@ arduino-cli core install arduino:avr
 
 # Teste de instalação
 arduino-cli board list
-
