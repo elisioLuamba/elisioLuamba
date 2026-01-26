@@ -65,116 +65,22 @@ if __name__ == "__main__":
 
 
 ```
-
 # ⚙️ Full Engineering Stack
 
-<p align="center">
-  <i>Simulation • Robotics • Real-Time Control • 3D Visualization • Web Integration</i>
-</p>
+*Simulation • Robotics • Real-Time Control • 3D Visualization • Web Integration*
 
----
+## 🐍 Python
+- **Hardware & Realtime:** pyFirmata2, pySerial, WebSockets, Socket.IO  
+- **Cálculo & Visualização:** NumPy, Matplotlib, pyqtgraph, Pillow  
+- **Desktop & UI:** PyQt6, PySide6, Qt WebEngine, PyInstaller  
+- **Backend & APIs:** Flask, FastAPI  
+- **Visão & IA:** OpenCV, MediaPipe, OpenAI API
 
-## 🐍 Python Stack
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Scientific-Computing-informational" />
-  <img src="https://img.shields.io/badge/Hardware-Integration-orange" />
-  <img src="https://img.shields.io/badge/RealTime-Systems-critical" />
-</p>
-
-#### 🔌 Hardware & Communication
-<p>
-  <img src="https://img.shields.io/badge/pyFirmata2-Arduino-green" />
-  <img src="https://img.shields.io/badge/pySerial-USB--Serial-blue" />
-  <img src="https://img.shields.io/badge/WebSockets-realtime-purple" />
-  <img src="https://img.shields.io/badge/python-socketio-event-black" />
-</p>
-
-- `pyfirmata2` • `pyserial` • `websockets` • `socketio` • `python-socketio`
-
-#### 📊 Calculation & Visualization
-<p>
-  <img src="https://img.shields.io/badge/NumPy-linear--algebra-informational" />
-  <img src="https://img.shields.io/badge/Matplotlib-data--viz-yellow" />
-  <img src="https://img.shields.io/badge/Pillow-image--processing-lightblue" />
-  <img src="https://img.shields.io/badge/pyqtgraph-real--time-orange" />
-</p>
-
-- `numpy` • `matplotlib` • `pillow` • `pyqtgraph`
-
-#### 🖥 Desktop & UI
-<p>
-  <img src="https://img.shields.io/badge/PyQt6-Qt--Framework-2C2255" />
-  <img src="https://img.shields.io/badge/PySide6-Qt--Framework-41CD52" />
-  <img src="https://img.shields.io/badge/PyQt6-WebEngine-web-blue" />
-  <img src="https://img.shields.io/badge/PyInstaller-packaging-red" />
-</p>
-
-- `PyQt6` • `PySide6` • `PyQt6-WebEngine` • `PyInstaller`
-
-#### 🌐 Backend & APIs
-<p>
-  <img src="https://img.shields.io/badge/FastAPI-async--api-teal?logo=fastapi" />
-  <img src="https://img.shields.io/badge/Flask-micro--framework-black?logo=flask" />
-</p>
-
-- `Flask` • `FastAPI`
-
-#### 👁️ Computer Vision & AI
-<p>
-  <img src="https://img.shields.io/badge/OpenCV-computer--vision-lightgrey" />
-  <img src="https://img.shields.io/badge/MediaPipe-hand--tracking-blue" />
-  <img src="https://img.shields.io/badge/OpenAI-AI--API-yellow" />
-</p>
-
-- `opencv-python` • `mediapipe` • `openai` • `AST`  
-
----
-
-## 🌐 Node.js & Web Stack
-
-<p>
-  <img src="https://img.shields.io/badge/Node.js-16+-green?logo=node.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/Web-3D-blue" />
-  <img src="https://img.shields.io/badge/Realtime-purple" />
-</p>
-
-#### 🖥 3D Visualization
-<p>
-  <img src="https://img.shields.io/badge/Three.js-3D-orange" />
-  <img src="https://img.shields.io/badge/@react-three/fiber-react-yellow" />
-  <img src="https://img.shields.io/badge/@react-three/drei-helpers-green" />
-  <img src="https://img.shields.io/badge/GSAP-animation-blue" />
-</p>
-
-- `three` • `@react-three/fiber` • `@react-three/drei` • `gsap`
-
-#### ⚙️ Physics & Interaction
-<p>
-  <img src="https://img.shields.io/badge/cannon-es-physics-orange" />
-  <img src="https://img.shields.io/badge/ammo.js-physics-red" />
-  <img src="https://img.shields.io/badge/OrbitControls-camera-blue" />
-</p>
-
-- `cannon-es` • `ammo.js` • `orbit-controls`  
-
-#### 🔌 Hardware & Realtime
-<p>
-  <img src="https://img.shields.io/badge/Johnny-Five-Robotics-green" />
-  <img src="https://img.shields.io/badge/socket.io-client-realtime-purple" />
-</p>
-
-- `johnny-five` • `socket.io-client`  
-
-#### ⚡ Web Tools
-<p>
-  <img src="https://img.shields.io/badge/Vite-build-lightgrey" />
-</p>
-
--  `vite`
-
----
+## 🌐 Node.js / Web
+- **3D & UI:** Three.js, @react-three/fiber, @react-three/drei  
+- **Animação & Física:** GSAP, cannon-es, ammo.js  
+- **Realtime & Hardware:** socket.io-client, Johnny-Five  
+- **Tooling:** Vite
 
 ## 📦 Quick Install
 
@@ -182,11 +88,11 @@ if __name__ == "__main__":
 ```bash
 pip install pyfirmata2 pyserial websockets python-socketio pyqt6 pyside6 pyqt6-webengine pyqtgraph pyinstaller flask fastapi numpy matplotlib pillow opencv-python mediapipe openai
 ```
-
-### Node
+### Python
 ```bash
 npm install three @react-three/fiber @react-three/drei gsap cannon-es ammo.js orbit-controls johnny-five socket.io-client vite
 ```
+
 
 ## 📦 Full Setup · Python + Anaconda + Arduino CLI
 
