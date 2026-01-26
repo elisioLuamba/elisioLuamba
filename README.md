@@ -1,23 +1,6 @@
 <h1 align="center">👋 Hey, I'm Elísio Massaqui</h1>
-<h3 align="center">🚀 Real-Time 3D Web Developer | Three.js + Robótica Virtual + Python | Computação Gráfica Interativa</h3>
-
+<h3 align="center">🚀 Three.js + Robótica Virtual + Python | Computação Gráfica Interativa</h3>
 ---
-
-### 🧠 About Me
-
-💼 Sou um **Desenvolvedor 3D em Tempo Real** apaixonado por unir **arte, código e inovação**.  
-Atuo na interseção entre **computação gráfica**, **web moderna** e **simulação 3D**, criando experiências interativas e visuais únicas.  
-
-🎓 **Estudante de Engenharia Informática** na Universidade Metodista de Angola.  
-💡 Foco em **renderização em tempo real**, **desenvolvimento 3D para web** e **aplicações interativas Three.js e Python**.  
-
-⚙️ Sou movido por desafios que unem **criatividade e performance**, e acredito que cada linha de código pode ser uma obra de arte quando escrita com propósito.
-
-📍 **Luanda, Angola**  
-📫 [LinkedIn](https://www.linkedin.com/in/el%C3%ADsiomassaqui380/) • [GitHub Older](https://github.com/elisioMassaqui)
-
----
-
 ### 🧰 Tools & Technologies
 
 <p align="center">
