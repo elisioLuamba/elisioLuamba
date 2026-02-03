@@ -95,13 +95,13 @@ if __name__ == "__main__":
 
 ## 📦 Quick Install
 
-### Python
+### BACK
 ```bash
 pip install pyfirmata2 pyserial websockets python-socketio pyqt6 pyside6 pyqt6-webengine pyqtgraph pyinstaller flask fastapi numpy matplotlib pillow opencv-python mediapipe openai
 ```
-### Python
+### FRONT
 ```bash
-npm install three @react-three/fiber @react-three/drei gsap cannon-es ammo.js orbit-controls johnny-five socket.io-client vite
+npm install three vite gsap cannon-es ammo.js orbit-controls socket.io-client
 ```
 
 ## 📦 Full Setup · Python + Anaconda + Arduino CLI
