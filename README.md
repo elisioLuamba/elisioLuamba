@@ -29,12 +29,12 @@
 
 ### ⚡ Featured Highlights
 
-- 🧩 **Real-Time 3D Web Developer** — criando experiências interativas com **Three.js, WebGL e Python**  
+- 🧩 **Real-Time 3D Web Developer** — criando experiências interativas com **Three.js e Python**  
 - 🔬 **Explorador de Computação Gráfica** — com domínio em **Shaders, Render Pipelines e Otimização de Cenas 3D**  
 - 💻 **Entusiasta de Open Source** — membro ativo da Comunidade de Código Aberto de Angola  
-- 🏆 **2º Lugar no Robotgames Hackathon 2023** — projeto em equipe com integração de hardware e simulação  
-- 🌍 **All In Africa Student** — representando inovação e tecnologia angolana  
-- ⚙️ **Experiência com Arduino e Automação** — integração entre sensores, simulação e visualização gráfica  
+- 🏆 **2º Lugar no AOSC Hackathon 2023** — contribuições no mundo do Open Source.
+- 🌍 **All In Africa Student** — graduação.
+- ⚙️ **Experiência com Arduino e Automação** — integração entre sensores, simulação e visualização gráfica.
 - 🧠 **Aprendizado Contínuo** — estudando pipelines de render e técnicas avançadas de computação gráfica  
 
 ---
@@ -52,7 +52,6 @@ class ElisioMassaqui:
         self.magia_open_source = "💻 Membro da Comunidade de Código Aberto de Angola"
         self.simulacao_3d = "🌐 Desenvolvedor de simulação 3D com Three.js e Python"
         self.multilingue = "🗣 Português e Inglês"
-        self.frontend = "🕸 Dominando o Desenvolvimento Front-End e Web Interativa"
         self.paixao_por_jogos = "🎮 Jogando Video Games"
         self.entusiasta_de_musica = "🎵 Aficionado por Spotify"
 
@@ -105,7 +104,7 @@ pyqt6-webengine pyqtgraph pyinstaller numpy matplotlib pillow opencv-python medi
 npm install three vite gsap cannon-es ammo.js orbit-controls socket.io-client
 ```
 
-## 📦 Full Setup · Python + Anaconda + Arduino CLI
+## 📦 Full Setup - Anaconda + Arduino CLI
 
 <p align="center">
   <img src="https://img.shields.io/badge/Anaconda-Python-blue?logo=anaconda&logoColor=white" />
@@ -125,14 +124,7 @@ conda create -n engineering-lab python=3.11 -y
 conda activate engineering-lab
 
 # Instalar pacotes científicos
-conda install numpy scipy pandas matplotlib -y
-
-# ---------------------------
-# 2️⃣ Python Stack
-# ---------------------------
-pip install pyfirmata2 pyserial websockets python-socketio \
-            pyqt6 pyside6 pyqt6-webengine pyqtgraph pyinstaller \
-            flask fastapi numpy matplotlib pillow opencv-python mediapipe openai
+conda install numpy scipy pandas matplotlib opencv-python mediapipe -y
 
 # ---------------------------
 # 3️⃣ Arduino CLI
