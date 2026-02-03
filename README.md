@@ -97,7 +97,8 @@ if __name__ == "__main__":
 
 ### BACK
 ```bash
-pip install pyfirmata2 pyserial websockets python-socketio pyqt6 pyside6 pyqt6-webengine pyqtgraph pyinstaller flask fastapi numpy matplotlib pillow opencv-python mediapipe openai
+pip install pyserial websockets python-socketio pyqt6
+pyqt6-webengine pyqtgraph pyinstaller numpy matplotlib pillow opencv-python mediapipe openai
 ```
 ### FRONT
 ```bash
