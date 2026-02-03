@@ -127,7 +127,7 @@ conda activate engineering-lab
 conda install numpy scipy pandas matplotlib opencv-python mediapipe -y
 
 # ---------------------------
-# 3️⃣ Arduino CLI
+# 2️⃣ Arduino CLI
 # ---------------------------
 # Windows: baixar MSI oficial
 # macOS/Linux: via Homebrew ou apt
