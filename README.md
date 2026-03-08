@@ -88,7 +88,6 @@ if __name__ == "__main__":
   <img src="https://img.shields.io/badge/3D-Three.js-FF8C00" />
   <img src="https://img.shields.io/badge/Physics-Simulation-E67E22" />
   <img src="https://img.shields.io/badge/Realtime-Socket.IO-9B59B6" />
-  <img src="https://img.shields.io/badge/Robotics-Johnny--Five-2ECC71" />
   <img src="https://img.shields.io/badge/Tooling-Vite-95A5A6" />
 </p>
 
