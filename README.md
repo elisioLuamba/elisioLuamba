@@ -101,7 +101,7 @@ pyqt6-webengine pyqtgraph pyinstaller numpy matplotlib pillow opencv-python medi
 ```
 ### FRONT
 ```bash
-npm install three vite gsap cannon-es ammo.js orbit-controls socket.io-client
+npm install three vite gsap cannon-es @dimforge/rapier3d socket.io-client lil-gui postprocessing three-stdlib howler gl-matrix three-ik
 ```
 
 ## 📦 Full Setup - Anaconda + Arduino CLI
