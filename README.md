@@ -93,14 +93,13 @@ if __name__ == "__main__":
 
 ## 📦 Quick Install
 
-### BACK
+### PY
 ```bash
-pip install pyserial websockets python-socketio pyqt6
-pyqt6-webengine pyqtgraph pyinstaller numpy matplotlib pillow opencv-python mediapipe openai pygame
+pip install pyserial websockets python-socketio pyqt6 PyQt6-WebEngine pyqtgraph pyinstaller pygame pillow
 ```
-### FRONT
+### JS
 ```bash
-npm install three vite gsap cannon-es @dimforge/rapier3d socket.io-client lil-gui postprocessing three-stdlib howler gl-matrix three-ik
+npm install three@0.183.2 vite gsap cannon-es @dimforge/rapier3d socket.io-client lil-gui postprocessing three-stdlib howler gl-matrix three-ik
 ```
 
 ## 📦 Full Setup - Anaconda + Arduino CLI
