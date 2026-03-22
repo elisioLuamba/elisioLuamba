@@ -20,9 +20,8 @@
 
 <p align="center">
   <img src="https://github.com/elisioMassaqui/elisioMassaqui/raw/main/unity-essentials-pathway.png" alt="Unity Essentials Badge" width="90" height="90">
-  <img src="https://github.com/elisioMassaqui/elisioMassaqui/blob/main/unity-junior-programmer%20(1).png" alt="Unity Junior Programmer" width="90" height="90">
+   <img src="https://github.com/elisioMassaqui/elisioMassaqui/blob/main/all-in-open-source-contributor%20(1).png" alt="Open Source Contributor" width="100" height="100">
   <img src="https://github.com/elisioMassaqui/elisioMassaqui/blob/main/unity-creative-core.png" alt="Unity Creative Core" width="90" height="90">
-  <img src="https://github.com/elisioMassaqui/elisioMassaqui/blob/main/all-in-open-source-contributor%20(1).png" alt="Open Source Contributor" width="100" height="100">
 </p>
 
 ---
