@@ -116,11 +116,11 @@ npm install three@0.183.2 vite gsap cannon-es @dimforge/rapier3d socket.io-clien
 # https://www.anaconda.com/products/distribution
 
 # Criação de ambiente isolado
-conda create -n engineering-lab python=3.11 -y
+conda create -n engineering-lab python=3.10
 conda activate engineering-lab
 
 # Instalar pacotes científicos
-conda install numpy scipy pandas matplotlib opencv-python mediapipe -y
+conda install numpy scipy pandas matplotlib opencv-python mediapipe
 
 # ---------------------------
 # 2️⃣ Arduino CLI
