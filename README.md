@@ -1,5 +1,7 @@
 <h3 align="center">🚀 Three.js + Robótica + Python + IA | Computação Gráfica Interativa</h3>
 
+---
+
 ### 🧰 Tools & Technologies
 
 <p align="center">
