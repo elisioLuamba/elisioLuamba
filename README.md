@@ -1,4 +1,4 @@
-<h3 align="center">🚀 Three.js + Robótica + Python + IA | Computação Gráfica Interativa</h3>
+<h3 align="center">🚀 Python + IA + Three.js</h3>
 
 ---
 
