@@ -1,5 +1,4 @@
-<h1 align="center">👋 Hey, I'm Elísio Massaqui</h1>
-<h3 align="center">🚀 Three.js + Robótica + Python + IA| Computação Gráfica Interativa</h3>
+<h3 align="center">🚀 Three.js + Robótica + Python + IA | Computação Gráfica Interativa</h3>
 
 ### 🧰 Tools & Technologies
 
