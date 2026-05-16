@@ -1,7 +1,5 @@
 <h3 align="center">🚀 Python + IA + Three.js</h3>
-
 ---
-
 ### 🧰 Tools & Technologies
 
 <p align="center">
@@ -12,45 +10,31 @@
   <img src="https://github.com/arduino/arduino-cli/blob/master/docs/img/CLI_Logo_small.png" alt="Arduino-CLI" width="100" height="100">
   <img src="https://github.com/eliMassaqui/eliMassaqui/blob/main/logo-square-green.svg" alt="Anaconda" width="100" height="100">
 </p>
-
 ---
-
-### ⚡ Featured Highlights
-
-- 🧩 **Real-Time 3D Web Developer** — criando experiências interativas com **Three.js e Python**  
-- 🔬 **Explorador de Computação Gráfica** — com domínio em **Shaders, Render Pipelines e Otimização de Cenas 3D**  
-- 💻 **Entusiasta de Open Source** — membro ativo da Comunidade de Código Aberto de Angola  
-- 🏆 **2º Lugar no AOSC Hackathon 2023** — contribuições no mundo do Open Source.
-- 🌍 **All In Africa Student** — graduação.
-- ⚙️ **Experiência com Arduino e Automação** — integração entre sensores, simulação e visualização gráfica.
-- 🧠 **Aprendizado Contínuo** — estudando pipelines de render e técnicas avançadas de computação gráfica  
-
----
-
-<h3 align="center">🌍 Open Your World!</h3>
 
 ```python
-import pygame
+import cv2
+import mediapipe as mp
 
-class ElisioMassaqui:
+class ComputerVisionEngineer:
     def __init__(self):
-        self.programando_desde = "2018, criando a magia da web e desktop ✨"
-        self.vitoria_hackathon = "🏆 Vencedor: Equipe do Robotgames Hackathon, 2º lugar em 2023"
-        self.aventuras_github = "🌍 All In Africa Student, desde novembro de 2023"
-        self.magia_open_source = "💻 Membro da Comunidade de Código Aberto de Angola"
-        self.simulacao_3d = "🌐 Desenvolvedor de simulação 3D com Three.js e Python"
-        self.multilingue = "🗣 Português e Inglês"
-        self.paixao_por_jogos = "🎮 Jogando Video Games"
-        self.entusiasta_de_musica = "🎵 Aficionado por Spotify"
+        self.main_language = "Python 🐍"
+        self.cv_stack = "OpenCV + MediaPipe + YOLO"
+        self.real_time_tracking = "🎯 Rastreamento corporal em tempo real"
+        self.pose_estimation = "🦾 Detecção de postura e movimentos humanos"
+        self.ai_vision = "🧠 Inteligência Artificial aplicada à visão computacional"
+        self.smart_automation = "⚙️ Integração entre IA, sensores e automação"
+        self.future_projects = "🚀 Sistemas inteligentes para ergonomia e segurança"
+        self.learning_mode = "🔬 Evoluindo constantemente em IA visual"
 
 if __name__ == "__main__":
-    pygame.init()
-    elisio = ElisioMassaqui()
-    for atributo, valor in elisio.__dict__.items():
-        print(valor)
-    pygame.quit()
+    vision = ComputerVisionEngineer()
 
+    for skill, value in vision.__dict__.items():
+        print(value)
 
+    cap = cv2.VideoCapture(0)
+    print("👁️ Camera initialized...")
 ```
 # ⚙️ Full Engineering Stack
 
