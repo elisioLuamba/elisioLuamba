@@ -17,20 +17,19 @@ import cv2
 
 class VisaoComputacional:
     def __init__(self):
-        self.linguagem = "🐍 Python"
-        self.stack = "OpenCV • MediaPipe • YOLO"
-        self.especialidade = "🧠 IA + Visão Computacional + Automação"
-        self.foco = "🎯 Rastreamento em tempo real e sistemas inteligentes"
-        self.aprendizado = "🔬 Evolução constante em IA visual"
+        self.stack = "Python + OpenCV + MediaPipe + YOLO"
+        self.foco = "Visão em tempo real e sistemas inteligentes"
+        self.estado = "Evolução contínua em IA visual"
+
+    def iniciar(self):
+        cap = cv2.VideoCapture(0)
+        print("Sistema de visão inicializado")
+        return cap
+
 
 if __name__ == "__main__":
-    vision = EngenheiroVisaoComputacional()
-
-    for valor in vision.__dict__.values():
-        print(valor)
-
-    cap = cv2.VideoCapture(0)
-    print("👁️ Sistema de visão inicializado...")
+    visao = VisaoComputacional()
+    cap = visao.iniciar()
 ```
 # ⚙️ Full Engineering Stack
 
