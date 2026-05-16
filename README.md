@@ -14,27 +14,23 @@
 
 ```python
 import cv2
-import mediapipe as mp
 
-class ComputerVisionEngineer:
+class VisaoComputacional:
     def __init__(self):
-        self.main_language = "Python 🐍"
-        self.cv_stack = "OpenCV + MediaPipe + YOLO"
-        self.real_time_tracking = "🎯 Rastreamento corporal em tempo real"
-        self.pose_estimation = "🦾 Detecção de postura e movimentos humanos"
-        self.ai_vision = "🧠 Inteligência Artificial aplicada à visão computacional"
-        self.smart_automation = "⚙️ Integração entre IA, sensores e automação"
-        self.future_projects = "🚀 Sistemas inteligentes para ergonomia e segurança"
-        self.learning_mode = "🔬 Evoluindo constantemente em IA visual"
+        self.linguagem = "🐍 Python"
+        self.stack = "OpenCV • MediaPipe • YOLO"
+        self.especialidade = "🧠 IA + Visão Computacional + Automação"
+        self.foco = "🎯 Rastreamento em tempo real e sistemas inteligentes"
+        self.aprendizado = "🔬 Evolução constante em IA visual"
 
 if __name__ == "__main__":
-    vision = ComputerVisionEngineer()
+    vision = EngenheiroVisaoComputacional()
 
-    for skill, value in vision.__dict__.items():
-        print(value)
+    for valor in vision.__dict__.values():
+        print(valor)
 
     cap = cv2.VideoCapture(0)
-    print("👁️ Camera initialized...")
+    print("👁️ Sistema de visão inicializado...")
 ```
 # ⚙️ Full Engineering Stack
 
