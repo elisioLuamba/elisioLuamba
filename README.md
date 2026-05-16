@@ -30,7 +30,7 @@ if __name__ == "__main__":
     visao = VisaoComputacional()
     cap = visao.iniciar()
 ```
-# ⚙️ Full Engineering Stack
+## ⚙️ Full Engineering Stack
 
 <p align="center">
   <img src="https://img.shields.io/badge/Simulation-00B3A4?style=for-the-badge" />
