@@ -1,5 +1,4 @@
 <h3 align="center">🚀 Python + IA + Three.js</h3>
----
 ### 🧰 Tools & Technologies
 
 <p align="center">
@@ -10,7 +9,6 @@
   <img src="https://github.com/arduino/arduino-cli/blob/master/docs/img/CLI_Logo_small.png" alt="Arduino-CLI" width="100" height="100">
   <img src="https://github.com/eliMassaqui/eliMassaqui/blob/main/logo-square-green.svg" alt="Anaconda" width="100" height="100">
 </p>
----
 
 ```python
 import cv2
