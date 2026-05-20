@@ -30,7 +30,7 @@ if __name__ == "__main__":
     visao = VisaoComputacional()
     cap = visao.iniciar()
 ```
-⚙️ <p align="center">
+<p align="center">
   <img src="https://img.shields.io/badge/Simulation-00B3A4?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Robotics-2ECC71?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Real--Time-E74C3C?style=for-the-badge" />
@@ -38,7 +38,7 @@ if __name__ == "__main__":
   <img src="https://img.shields.io/badge/Web-Integration-9B59B6?style=for-the-badge" />
 </p>
 
-## 🐍 Python
+🐍
 <p>
   <img src="https://img.shields.io/badge/Hardware-Integration-E67E22" />
   <img src="https://img.shields.io/badge/Realtime-Sockets-9B59B6" />
@@ -47,7 +47,7 @@ if __name__ == "__main__":
   <img src="https://img.shields.io/badge/Vision-AI-F1C40F" />
 </p>
 
-## 🌐 Web / Node.js
+🌐
 <p>
   <img src="https://img.shields.io/badge/3D-Three.js-FF8C00" />
   <img src="https://img.shields.io/badge/Physics-Simulation-E67E22" />
