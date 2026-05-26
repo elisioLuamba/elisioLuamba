@@ -1,7 +1,5 @@
 <h3 align="center">🚀 Python + IA + Three.js</h3>
 
-### 🧰 Tools & Technologies
-
 <p align="center">
   <img src="https://github.com/elisioMassaqui/elisioMassaqui/blob/main/Three.js_Icon.svg.png" alt="Three.js" width="90" height="90">
   <img src="https://github.com/elisioMassaqui/elisioMassaqui/raw/main/Antu_arduino-icon-small.svg.png" alt="Arduino" width="90" height="90">
@@ -19,9 +17,8 @@ class VisaoComputacional:
         self.nome = "Mr.Robot"
         self.conquista = "Vencedor Angola Open Source Community"
 
-        self.stack = "Python + OpenCV + MediaPipe + YOLO"
-        self.foco = "Visão em tempo real e sistemas inteligentes"
-        self.estado = "Evolução contínua em IA visual"
+        self.stack = "Python | C# | C++ | Js"
+        self.foco = "Sistemas atualizados"
 
     def iniciar(self):
         cap = cv2.VideoCapture(0)
@@ -31,7 +28,6 @@ class VisaoComputacional:
         print("Sistema inicializado")
 
         return cap
-
 
 visao = VisaoComputacional()
 cap = visao.iniciar()
