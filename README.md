@@ -1,5 +1,3 @@
-<h3 align="center">🚀 Python + IA + Three.js</h3>
-
 <p align="center">
   <img src="https://github.com/elisioMassaqui/elisioMassaqui/blob/main/Three.js_Icon.svg.png" alt="Three.js" width="90" height="90">
   <img src="https://github.com/elisioMassaqui/elisioMassaqui/raw/main/Antu_arduino-icon-small.svg.png" alt="Arduino" width="90" height="90">
