@@ -16,19 +16,25 @@ import cv2
 
 class VisaoComputacional:
     def __init__(self):
+        self.nome = "Mr.Robot"
+        self.conquista = "Vencedor Angola Open Source Community"
+
         self.stack = "Python + OpenCV + MediaPipe + YOLO"
         self.foco = "Visão em tempo real e sistemas inteligentes"
         self.estado = "Evolução contínua em IA visual"
 
     def iniciar(self):
         cap = cv2.VideoCapture(0)
-        print("Sistema de visão inicializado")
+
+        print(f"👨‍💻 {self.nome}")
+        print(f"🏆 {self.conquista}")
+        print("Sistema inicializado")
+
         return cap
 
 
-if __name__ == "__main__":
-    visao = VisaoComputacional()
-    cap = visao.iniciar()
+visao = VisaoComputacional()
+cap = visao.iniciar()
 ```
 <p align="center">
   <img src="https://img.shields.io/badge/IA-00B3A4?style=for-the-badge" />
